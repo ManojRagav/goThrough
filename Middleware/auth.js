@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken')
          return res.json({msg : "You must logged in"})
      }
      const accessToken = authorization.replace("Bearer ","")
+     console.log(accessToken);
      jwt.verify(accessToken,process.env.TOKEN_KEY,(err,payload)=>{
          if(err){
              return res.json({err:"you must logged in"})
