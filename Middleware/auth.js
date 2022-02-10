@@ -2,12 +2,10 @@ const Users = require ('../Models/userModel')
 const jwt = require('jsonwebtoken')
  module.exports = (req,res,next) =>{
      const {authorization} = req.headers
-     console.log(authorization);
      if(!authorization){
          return res.json({msg : "You must logged in"})
      }
      const accessToken = authorization.replace("Bearer ","")
-     console.log(accessToken);
      jwt.verify(accessToken,process.env.TOKEN_KEY,(err,payload)=>{
          if(err){
              return res.json({err:"you must logged in"})
