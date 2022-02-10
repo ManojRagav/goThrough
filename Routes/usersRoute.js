@@ -4,7 +4,7 @@ const auth = require ('../Middleware/auth')
 
 //authentication routes
 router.post('/signup', userAuthentication.register)
-router.post('/signin', userAuthentication.login)
+router.post('/signin',auth, userAuthentication.login)
 
 
 module.exports = router
