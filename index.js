@@ -1,6 +1,5 @@
 const express = require ('express');
 const app = express();
-const cors = require('cors')
 
 const mongoose = require ('mongoose');
 const biodataRoute = require ('./Routes/biodataRoute');
@@ -12,7 +11,6 @@ require('dotenv').config();
 
 //body parser
 app.use(express.json());
-app.use(cors)
 
 //connect to server port
 
